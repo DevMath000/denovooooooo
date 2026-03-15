@@ -98,76 +98,80 @@
   }
 }
                }
-    /* SEÇÃO EXTRA – EMOÇÕES COM CÍRCULOS */
+ /* BOLHAS DE EMOÇÕES */
 
 .emotion-path{
-  margin-top:70px;
-  padding:60px 0;
+  position:relative;
+  padding:120px 0 80px 0;
+  display:flex;
+  justify-content:center;
 }
 
 .emotion-container{
   display:flex;
-  justify-content:center;
+  gap:70px;
   flex-wrap:wrap;
-  gap:60px;
+  justify-content:center;
 }
 
 .emotion-point{
-  width:140px;
-  height:140px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+/* bolha */
+
+.emotion-photo{
+  width:150px;
+  height:150px;
   border-radius:50%;
-  background:white;
+  background:radial-gradient(circle at 30% 30%, #ffffff, #ffd6d6);
   box-shadow:0 15px 35px rgba(0,0,0,.15);
   display:flex;
   align-items:center;
   justify-content:center;
-  flex-direction:column;
-  transition:.4s;
-  position:relative;
   overflow:hidden;
+  position:relative;
+  animation:floatBubble 6s ease-in-out infinite;
 }
 
-.emotion-point:hover{
-  transform:scale(1.1) translateY(-10px);
-  box-shadow:0 20px 40px rgba(0,0,0,.2);
+/* brilho da bolha */
+
+.emotion-photo::after{
+  content:'';
+  position:absolute;
+  width:35px;
+  height:35px;
+  border-radius:50%;
+  background:rgba(255,255,255,.7);
+  top:18px;
+  left:25px;
+  filter:blur(3px);
 }
 
-.emotion-photo{
-  width:100%;
-  height:100%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:#aaa;
-  font-size:.9rem;
-  text-align:center;
-  padding:10px;
-}
+/* nome da emoção */
 
 .emotion-label{
-  position:absolute;
-  bottom:-35px;
-  font-size:.9rem;
+  margin-top:15px;
   font-weight:600;
   color:#b44f4f;
+  font-size:1rem;
+  text-align:center;
 }
 
-/* animação flutuando */
+/* animação */
 
-@keyframes floatEmotion{
+@keyframes floatBubble{
   0%{transform:translateY(0)}
-  50%{transform:translateY(-8px)}
+  50%{transform:translateY(-25px)}
   100%{transform:translateY(0)}
 }
 
-.emotion-point{
-  animation:floatEmotion 4s ease-in-out infinite;
-}
-
-.emotion-point:nth-child(2){animation-delay:.5s}
-.emotion-point:nth-child(3){animation-delay:1s}
-.emotion-point:nth-child(4){animation-delay:1.5s}
-.emotion-point:nth-child(5){animation-delay:2s}
+.emotion-point:nth-child(2) .emotion-photo{animation-delay:1s}
+.emotion-point:nth-child(3) .emotion-photo{animation-delay:2s}
+.emotion-point:nth-child(4) .emotion-photo{animation-delay:3s}
+.emotion-point:nth-child(5) .emotion-photo{animation-delay:4s}
   </style>
 </head>
 <body>
@@ -208,50 +212,48 @@
     <div class="reveal"><h3>Desenvolvimento</h3><p>Relacionamentos, mentiras sociais e amadurecimento.</p></div>
     <div class="reveal"><h3>Final</h3><p>Reconhecimento afetivo da família e crescimento emocional.</p></div>
   </div>
-</sectio>
+</section>
 
 <section>
-<h2>Caminho das Emoções</h2>
+<h2>Memórias Emocionais</h2>
 
 <div class="emotion-path">
-
-<div class="emotion-line"></div>
 
 <div class="emotion-container">
 
 <div class="emotion-point reveal">
 <div class="emotion-photo">
-<!-- COLOQUE A FOTO AQUI -->
+<!-- FOTO -->
 </div>
-<div class="emotion-label">Sonhos</div>
-</div>
-
-<div class="emotion-point reveal">
-<div class="emotion-photo">
-<!-- COLOQUE A FOTO AQUI -->
-</div>
-<div class="emotion-label">Conflitos</div>
+<div class="emotion-label">Alegria</div>
 </div>
 
 <div class="emotion-point reveal">
 <div class="emotion-photo">
-<!-- COLOQUE A FOTO AQUI -->
+<!-- FOTO -->
 </div>
-<div class="emotion-label">Descobertas</div>
-</div>
-
-<div class="emotion-point reveal">
-<div class="emotion-photo">
-<!-- COLOQUE A FOTO AQUI -->
-</div>
-<div class="emotion-label">Mudanças</div>
+<div class="emotion-label">Confusão</div>
 </div>
 
 <div class="emotion-point reveal">
 <div class="emotion-photo">
-<!-- COLOQUE A FOTO AQUI -->
+<!-- FOTO -->
 </div>
-<div class="emotion-label">Crescimento</div>
+<div class="emotion-label">Medo</div>
+</div>
+
+<div class="emotion-point reveal">
+<div class="emotion-photo">
+<!-- FOTO -->
+</div>
+<div class="emotion-label">Esperança</div>
+</div>
+
+<div class="emotion-point reveal">
+<div class="emotion-photo">
+<!-- FOTO -->
+</div>
+<div class="emotion-label">Saudade</div>
 </div>
 
 </div>
