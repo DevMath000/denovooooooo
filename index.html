@@ -97,32 +97,19 @@
     grid-template-columns:1fr;
   }
 }
-    }
-    /* SEÇÃO EXTRA – CAMINHO EMOCIONAL */
+               }
+    /* SEÇÃO EXTRA – EMOÇÕES COM CÍRCULOS */
 
 .emotion-path{
   margin-top:70px;
-  position:relative;
-  padding:80px 0;
-}
-
-.emotion-line{
-  position:absolute;
-  top:50%;
-  left:0;
-  width:100%;
-  height:6px;
-  background:linear-gradient(90deg,#f5b3b3,#b44f4f,#f5b3b3);
-  border-radius:10px;
-  transform:translateY(-50%);
+  padding:60px 0;
 }
 
 .emotion-container{
   display:flex;
-  justify-content:space-between;
-  align-items:center;
-  position:relative;
-  z-index:2;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:60px;
 }
 
 .emotion-point{
@@ -141,7 +128,7 @@
 }
 
 .emotion-point:hover{
-  transform:scale(1.08) translateY(-10px);
+  transform:scale(1.1) translateY(-10px);
   box-shadow:0 20px 40px rgba(0,0,0,.2);
 }
 
@@ -181,28 +168,6 @@
 .emotion-point:nth-child(3){animation-delay:1s}
 .emotion-point:nth-child(4){animation-delay:1.5s}
 .emotion-point:nth-child(5){animation-delay:2s}
-
-@media(max-width:900px){
-
-  .emotion-container{
-    flex-direction:column;
-    gap:60px;
-  }
-
-  .emotion-line{
-    width:6px;
-    height:100%;
-    left:50%;
-    top:0;
-    transform:none;
-  }
-
-  .emotion-label{
-    position:static;
-    margin-top:8px;
-  }
-
-    }
   </style>
 </head>
 <body>
@@ -243,29 +208,8 @@
     <div class="reveal"><h3>Desenvolvimento</h3><p>Relacionamentos, mentiras sociais e amadurecimento.</p></div>
     <div class="reveal"><h3>Final</h3><p>Reconhecimento afetivo da família e crescimento emocional.</p></div>
   </div>
-</section>
+</sectio>
 
-<footer>
-  Lady Bird — Trabalho sobre emoções da adolescência no Ensino Médio.
-</footer>
-
-<script>
-const reveals = document.querySelectorAll('.reveal');
-window.addEventListener('scroll', ()=>{
-  reveals.forEach(el=>{
-    const top = el.getBoundingClientRect().top;
-    if(top < window.innerHeight - 100){
-      el.style.opacity='1';
-      el.style.transform='translateY(0)';
-    }
-  });
-});
-reveals.forEach(el=>{
-  el.style.opacity='0';
-  el.style.transform='translateY(60px)';
-  el.style.transition='all 1s ease';
-});
-</script>
 <section>
 <h2>Caminho das Emoções</h2>
 
@@ -313,6 +257,29 @@ reveals.forEach(el=>{
 </div>
 </div>
 </section>
+  
+<footer>
+  Lady Bird — Trabalho sobre emoções da adolescência no Ensino Médio.
+</footer>
+
+<script>
+const reveals = document.querySelectorAll('.reveal');
+window.addEventListener('scroll', ()=>{
+  reveals.forEach(el=>{
+    const top = el.getBoundingClientRect().top;
+    if(top < window.innerHeight - 100){
+      el.style.opacity='1';
+      el.style.transform='translateY(0)';
+    }
+  });
+});
+reveals.forEach(el=>{
+  el.style.opacity='0';
+  el.style.transform='translateY(60px)';
+  el.style.transition='all 1s ease';
+});
+</script>
+
 </body>
   </html>
   
