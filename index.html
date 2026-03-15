@@ -98,6 +98,111 @@
   }
 }
     }
+    /* SEÇÃO EXTRA – CAMINHO EMOCIONAL */
+
+.emotion-path{
+  margin-top:70px;
+  position:relative;
+  padding:80px 0;
+}
+
+.emotion-line{
+  position:absolute;
+  top:50%;
+  left:0;
+  width:100%;
+  height:6px;
+  background:linear-gradient(90deg,#f5b3b3,#b44f4f,#f5b3b3);
+  border-radius:10px;
+  transform:translateY(-50%);
+}
+
+.emotion-container{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:relative;
+  z-index:2;
+}
+
+.emotion-point{
+  width:140px;
+  height:140px;
+  border-radius:50%;
+  background:white;
+  box-shadow:0 15px 35px rgba(0,0,0,.15);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  transition:.4s;
+  position:relative;
+  overflow:hidden;
+}
+
+.emotion-point:hover{
+  transform:scale(1.08) translateY(-10px);
+  box-shadow:0 20px 40px rgba(0,0,0,.2);
+}
+
+.emotion-photo{
+  width:100%;
+  height:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#aaa;
+  font-size:.9rem;
+  text-align:center;
+  padding:10px;
+}
+
+.emotion-label{
+  position:absolute;
+  bottom:-35px;
+  font-size:.9rem;
+  font-weight:600;
+  color:#b44f4f;
+}
+
+/* animação flutuando */
+
+@keyframes floatEmotion{
+  0%{transform:translateY(0)}
+  50%{transform:translateY(-8px)}
+  100%{transform:translateY(0)}
+}
+
+.emotion-point{
+  animation:floatEmotion 4s ease-in-out infinite;
+}
+
+.emotion-point:nth-child(2){animation-delay:.5s}
+.emotion-point:nth-child(3){animation-delay:1s}
+.emotion-point:nth-child(4){animation-delay:1.5s}
+.emotion-point:nth-child(5){animation-delay:2s}
+
+@media(max-width:900px){
+
+  .emotion-container{
+    flex-direction:column;
+    gap:60px;
+  }
+
+  .emotion-line{
+    width:6px;
+    height:100%;
+    left:50%;
+    top:0;
+    transform:none;
+  }
+
+  .emotion-label{
+    position:static;
+    margin-top:8px;
+  }
+
+    }
   </style>
 </head>
 <body>
@@ -161,7 +266,53 @@ reveals.forEach(el=>{
   el.style.transition='all 1s ease';
 });
 </script>
+<section>
+<h2>Caminho das Emoções</h2>
 
+<div class="emotion-path">
+
+<div class="emotion-line"></div>
+
+<div class="emotion-container">
+
+<div class="emotion-point reveal">
+<div class="emotion-photo">
+<!-- COLOQUE A FOTO AQUI -->
+</div>
+<div class="emotion-label">Sonhos</div>
+</div>
+
+<div class="emotion-point reveal">
+<div class="emotion-photo">
+<!-- COLOQUE A FOTO AQUI -->
+</div>
+<div class="emotion-label">Conflitos</div>
+</div>
+
+<div class="emotion-point reveal">
+<div class="emotion-photo">
+<!-- COLOQUE A FOTO AQUI -->
+</div>
+<div class="emotion-label">Descobertas</div>
+</div>
+
+<div class="emotion-point reveal">
+<div class="emotion-photo">
+<!-- COLOQUE A FOTO AQUI -->
+</div>
+<div class="emotion-label">Mudanças</div>
+</div>
+
+<div class="emotion-point reveal">
+<div class="emotion-photo">
+<!-- COLOQUE A FOTO AQUI -->
+</div>
+<div class="emotion-label">Crescimento</div>
+</div>
+
+</div>
+</div>
+</section>
 </body>
   </html>
   
